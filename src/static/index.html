@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="admin-toolbar">
+      <button id="admin-toggle" type="button" class="admin-toggle">Admin</button>
+      <span id="auth-status" class="auth-status">Student view</span>
+    </div>
+
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
@@ -22,7 +27,8 @@
       </section>
 
       <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
+        <h3>Teacher Registration Actions</h3>
+        <p id="teacher-note">Log in as a teacher to register or unregister students.</p>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
@@ -40,6 +46,26 @@
         <div id="message" class="hidden"></div>
       </section>
     </main>
+
+    <div id="login-modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-labelledby="login-title" aria-modal="true">
+        <h3 id="login-title">Teacher Login</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required />
+          </div>
+          <div class="modal-actions">
+            <button type="submit">Login</button>
+            <button id="cancel-login" type="button" class="secondary-button">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <footer>
       <p>&copy; 2026 Mergington High School</p>
